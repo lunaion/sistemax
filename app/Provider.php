@@ -10,4 +10,7 @@ class Provider extends Model
         'name', 'email', 'nit_number', 'address', 'phone',
     ];
     
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
 }
