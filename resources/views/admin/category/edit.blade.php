@@ -47,9 +47,6 @@
                     {!! Form::close() !!}
 
                 </div>
-                {{-- <div class="card-footer text-muted">
-                    {{$categories->render()}}
-                </div> --}}
             </div>
         </div>
     </div>
