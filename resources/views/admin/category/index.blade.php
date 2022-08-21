@@ -44,28 +44,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $category)
+                                {{-- @foreach ($categories as $category)
                                 @include('admin.category._category_list', [
-                                    /* 'item' => $category,
-                                    'form_number' => '0' */
+                                    'item' => $category,
+                                    'form_number' => '0'
                                 ])
                                 @if ($category->has_subcategory())
                                     @foreach ($category->subcategories as $subcategory_1)
                                     @include('admin.category._category_list', [
-                                        /* 'item' => $subcategory_1,
-                                        'form_number' => '1' */
+                                        'item' => $subcategory_1,
+                                        'form_number' => '1'
                                     ])
                                     @if ($subcategory_1->has_subcategory())
                                         @foreach ($subcategory_1->subcategories as $subcategory_2)
                                         @include('admin.category._category_list', [
-                                            /* 'item' => $subcategory_2,
-                                            'form_number' => '2' */
+                                            'item' => $subcategory_2,
+                                            'form_number' => '2'
                                         ])
                                         @endforeach
                                     @endif
                                     @endforeach
                                 @endif
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -80,6 +80,7 @@
 @endsection
 @section('scripts')
 
+{!! Html::script('melody/js/data-table.js') !!}
 {!! Html::script('treegrid/js/jquery.treegrid.js') !!}
 {!! Html::script('js/my_functions.js') !!}
 <script type="text/javascript">

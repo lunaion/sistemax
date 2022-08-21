@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Registrar categoría')
+@section('title','Editar categoría')
 @section('styles')
 {!! Html::style('treegrid/css/jquery.treegrid.css') !!}
 @endsection
@@ -11,13 +11,13 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Registro de categorías
+            Editar categoría
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Categorías</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Registro de categorías</li>
+                <li class="breadcrumb-item active" aria-current="page">Editar categoría</li>
             </ol>
         </nav>
     </div>
@@ -27,12 +27,22 @@
                 <div class="card-body">
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Registro de categorías</h4>
+                        <h4 class="card-title">Editar categoría</h4>
                     </div>
 
-                    {!! Form::open(['route'=>'categories.store', 'method'=>'POST']) !!}
-                    @include('admin.category._form')
-                    <button type="submit" class="btn btn-primary mr-2">Registrar</button>
+                    {!! Form::model($category,['route'=>['categories.update',$category], 'method'=>'PUT']) !!}
+
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name" id="name" value="{{ $category->name }}" class="form-control" placeholder="Nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <textarea class="form-control" name="description" id="description" rows="3">{{ $category->description }}</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
                     <a href="{{ route('categories.index') }}" class="btn btn-light">Cancelar</a>
                     {!! Form::close() !!}
 
