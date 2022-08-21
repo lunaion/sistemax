@@ -59,6 +59,7 @@
 
                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
                     <a href="{{ route('providers.index') }}" class="btn btn-light">Cancelar</a>
+                    
                     {!! Form::close() !!}
 
                 </div>

@@ -25,10 +25,10 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name'          => 'required|string|max:255',
-            'email'         => 'required|email|string|unique|providers,email,' . $this->route('provider')->id.'|max:255',
-            'nit_number'    => 'required|string|min:7|unique|providers,nit_number, ' . $this->route('provider')->id.'|max:10',
+            'email'         => 'required|email|string|unique:providers,email,' . $this->route('provider')->id.'|max:255',
+            'nit_number'    => 'required|string|min:7|unique:providers,nit_number, ' . $this->route('provider')->id.'|max:10',
             'address'       => 'nullable|string|max:255', 
-            'phone'         => 'required|string|min:7|unique|providers,phone,' . $this->route('provider')->id.'|max:10',
+            'phone'         => 'required|string|min:7|unique:providers,phone,' . $this->route('provider')->id.'|max:10',
         ];
     }
 }
