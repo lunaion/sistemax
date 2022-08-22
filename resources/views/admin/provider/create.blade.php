@@ -44,7 +44,7 @@
 
                     <div class="form-group">
                         <label for="nit_number">NIT</label>
-                        <input type="text" class="form-control" name="nit_number" id="nit_number" aria-describedby="helpId" placeholder="NIT" required>
+                        <input type="number" class="form-control" name="nit_number" id="nit_number" aria-describedby="helpId" placeholder="NIT" required>
                     </div>
 
                     <div class="form-group">

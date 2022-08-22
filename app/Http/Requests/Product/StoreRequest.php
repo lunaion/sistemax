@@ -25,10 +25,10 @@ class StoreRequest extends FormRequest
     {
         return [
             'name'          => 'string|required|unique:products|max:255',
-            'image'         => 'required|dimensions:min_width=100,min_height=200',
+            /* 'image'         => 'required|dimensions:min_width=100,min_height=200', */
             'sell_price'    => 'required',
-            'category_id'   => 'integer|required|exists:App\Category,id',
-            'provider_id'   => 'integer|required|exists:App\Provider,id',
+            /* 'category_id'   => 'integer|required',
+            'provider_id'   => 'integer|required', */
         ];
     }
 
@@ -43,12 +43,12 @@ class StoreRequest extends FormRequest
             'image.dimensions'      => 'Solo se permite imagenes de 100x200 px.',
 
             'category_id.integer'   => 'Solo se permiten valores enteros.',
-            'category_id.required'  => 'El campo es requerido.',
-            'category_id.exists'    => 'La categoría no existe.',
+            /* 'category_id.required'  => 'El campo es requerido.', */
+            /* 'category_id.exists'    => 'La categoría no existe.', */
 
             'provider_id.integer'   => 'Solo se permiten valores enteros.',
-            'provider_id.required'  => 'El campo es requerido.',
-            'provider_id.exists'    => 'El proveedor no existe.',
+            /* 'provider_id.required'  => 'El campo es requerido.', */
+            /* 'provider_id.exists'    => 'El proveedor no existe.', */
         ];
     }
 }
