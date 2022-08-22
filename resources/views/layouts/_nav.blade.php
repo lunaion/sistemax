@@ -17,13 +17,13 @@
         </li>
         @can('home')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('home')}}">
+            <a class="nav-link" href="{{route('home')}}">
                 <i class="fa fa-home menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
-        {{--  @can('reports.day' || 'reports.date' || 'report.results')  --}}
+         {{-- @can('reports.day' || 'reports.date' || 'report.results')  --}}
         <li class="nav-item">
            
             <a class="nav-link" data-toggle="collapse" href="#page-layouts1" aria-expanded="false"
@@ -74,7 +74,7 @@
         </li>
         @endcan
 
-        {{--  @can('products.index' ||
+         {{-- @can('products.index' ||
             'categories.index' ||
             'tags.index' ||
             'brands.index'
@@ -90,7 +90,7 @@
                 <ul class="nav flex-column sub-menu">
                     @can('products.index')
                     <li class="nav-item d-none d-lg-block">
-                        {{-- <a class="nav-link" href="{{route('products.index')}}">Productos</a> --}}
+                        <a class="nav-link" href="{{route('products.index')}}">Productos</a>
                     </li>
                     @endcan
                     @can('categories.index')
@@ -175,19 +175,19 @@
         {{--  @endcan  --}}
         @can('clients.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('clients.index')}}">
+            <a class="nav-link" href="{{route('clients.index')}}">
                 <i class="fas fa-users menu-icon"></i>
                 <span class="menu-title">Clientes</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
        
         @can('providers.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('providers.index')}}">
+            <a class="nav-link" href="{{route('providers.index')}}">
                 <i class="fas fa-shipping-fast menu-icon"></i>
                 <span class="menu-title">Proveedores</span>
-            </a> --}}
+            </a>
         </li>  
         @endcan
         @can('users.index')
@@ -233,11 +233,5 @@
             </div>
         </li> 
         {{--  @endcan  --}}
-        <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">
-                <i class="fab fa-youtube menu-icon"></i>
-                <span class="menu-title">YouTube</span>
-            </a>
-        </li>
     </ul>
 </nav>
