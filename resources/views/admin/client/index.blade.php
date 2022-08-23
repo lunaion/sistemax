@@ -42,7 +42,7 @@
                                 <i class="fas fa-ellipsis"></i>
                             </a>
                             {{-- <div class="dropdown-menu dropdown-menu-right"> --}}
-                            <a href="{{route('products.create')}}" type="button" class="btn btn-info ">
+                            <a href="{{route('clients.create')}}" type="button" class="btn btn-info ">
                                 <i class="fas fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -62,7 +62,7 @@
                             <tbody>
                                 @foreach ($clients as $client)
                                 <tr>
-                                    <th scope="row">{{ $product->id }}</th>
+                                    <th scope="row">{{ $client->id }}</th>
                                     <td>
                                         <a href="{{ route('clients.show', $client) }}">{{ $client->name }}</a>
                                     </td>

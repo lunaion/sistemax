@@ -25,10 +25,10 @@ class UpdateRequest extends FormRequest
     {
         return [
             'name'      => 'string|required|max:255', 
-            'dni'       => 'string|required|unique:clients,dni'.$this->route('client')->id.'|min:10|max:12', 
-            'ruc'       => 'nullable|string|unique:clients,ruc'.$this->route('client')->id.'|min:10|max:12', 
+            'dni'       => 'string|required|unique:clients,dni'.$this->route('client')->id.'|min:7|max:12', 
+            'ruc'       => 'nullable|string|unique:clients,ruc'.$this->route('client')->id.'|min:7|max:12', 
             'address'   => 'nullable|string|max:255', 
-            'phone'     => 'string|nullable|unique:clients,phone'.$this->route('client')->id.'|min:10|max:12', 
+            'phone'     => 'string|nullable|unique:clients,phone'.$this->route('client')->id.'|min:7|max:10', 
             'email'     => 'string|nullable|unique:clients,email'.$this->route('client')->id.'|max:255|email:rfc,dns',
         ];
     }
@@ -42,21 +42,23 @@ class UpdateRequest extends FormRequest
             'dni.string'        => 'El valor no es correcto.',
             'dni.required'      => 'El campo es requerido.',
             'dni.unique'        => 'El DNI ya se encuentra registrado',
-            'dni.min'           => 'El valor mínimo es de 10 carácteres.',
+            'dni.min'           => 'El valor mínimo es de 7 carácteres.',
             'dni.max'           => 'El valor máximo es de 12 carácteres.',
 
             'ruc.string'        => 'El valor no es correcto.',
             'ruc.unique'        => 'El RUC ya se encuentra registrado',
-            'ruc.min'           => 'El valor mínimo es de 10 carácteres.',
-            'dni.max'           => 'El valor máximo es de 12 carácteres.',
+            'ruc.min'           => 'El valor mínimo es de 7 carácteres.',
+            'ruc.max'           => 'El valor máximo es de 12 carácteres.',
 
             'address.string'    => 'El valor no es correcto.',
             'address.max'       => 'El valor máximo es de 255 caracteres.',
 
             'phone.string'      => 'El valor no es correcto.',
-            'phone.unique'      => 'El email ya se encuentra registrado ',
-            'phone.max'         => 'El valor máximo es de 255 caracteres.',
-            'phone.email'       => 'No es un email valido',
+            'phone.unique'      => 'El telefono ya se encuentra registrado ',
+            'phone.min'         => 'El valor mínimo es de 7 carácteres.',
+            'phone.max'         => 'El valor máximo es de 10 carácteres.',
+
+            'email.email'       => 'No es un email valido',
 
         ];
     }

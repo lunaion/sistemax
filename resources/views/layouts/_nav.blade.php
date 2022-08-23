@@ -6,12 +6,12 @@
                     <img src="{{asset('melody/images/faces/face16.jpg')}}" alt="image" />
                 </div>
                 <div class="profile-name">
-                    {{-- <p class="name">
-                        {{ Auth::user()->name }}
+                    <p class="name">
+                        {{-- {{ Auth::user()->name }} --}}
                     </p>
                     <p class="designation">
-                        {{ Auth::user()->email }}
-                    </p> --}}
+                        {{-- {{ Auth::user()->email }} --}}
+                    </p>
                 </div>
             </div>
         </li>
@@ -23,7 +23,7 @@
             </a>
         </li>
         @endcan
-         {{-- @can('reports.day' || 'reports.date' || 'report.results')  --}}
+        {{--  @can('reports.day' || 'reports.date' || 'report.results')  --}}
         <li class="nav-item">
            
             <a class="nav-link" data-toggle="collapse" href="#page-layouts1" aria-expanded="false"
@@ -36,12 +36,12 @@
                 <ul class="nav flex-column sub-menu">
                     @can('reports.day')
                     <li class="nav-item d-none d-lg-block">
-                        {{-- <a class="nav-link" href="{{route('reports.day')}}">Reportes por día</a> --}}
+                        <a class="nav-link" href="{{route('reports.day')}}">Reportes por día</a>
                     </li>
                     @endcan
                     @can('reports.date')
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{route('reports.date')}}">Reportes por fecha</a> --}}
+                        <a class="nav-link" href="{{route('reports.date')}}">Reportes por fecha</a>
                     </li>
                     @endcan
                 </ul>
@@ -50,31 +50,31 @@
         {{--  @endcan  --}}
         @can('purchases.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('purchases.index')}}">
+            <a class="nav-link" href="{{route('purchases.index')}}">
                 <i class="fas fa-cart-plus menu-icon"></i>
                 <span class="menu-title">Compras</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
         @can('sales.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('sales.index')}}">
+            <a class="nav-link" href="{{route('sales.index')}}">
                 <i class="fas fa-shopping-cart menu-icon"></i>
                 <span class="menu-title">Ventas</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
         @can('orders.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('orders.index')}}">
+            <a class="nav-link" href="{{route('orders.index')}}">
                 <i class="fas fa-shipping-fast menu-icon"></i>
 
                 <span class="menu-title">Pedidos</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
 
-         {{-- @can('products.index' ||
+        {{--  @can('products.index' ||
             'categories.index' ||
             'tags.index' ||
             'brands.index'
@@ -100,12 +100,12 @@
                     @endcan
                     @can('tags.index')
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{route('tags.index')}}">Etiquetas</a> --}}
+                        <a class="nav-link" href="{{route('tags.index')}}">Etiquetas</a>
                     </li>
                     @endcan
                     @can('brands.index')
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{route('brands.index')}}">Marcas</a> --}}
+                        <a class="nav-link" href="{{route('brands.index')}}">Marcas</a>
                     </li>
                     @endcan
                 </ul>
@@ -126,7 +126,7 @@
                 <ul class="nav flex-column sub-menu">
                     @can('posts.index')
                     <li class="nav-item d-none d-lg-block">
-                        {{-- <a class="nav-link" href="{{route('posts.index')}}">Publicaciones</a> --}}
+                        <a class="nav-link" href="{{route('posts.index')}}">Publicaciones</a>
                     </li> 
                     @endcan
                 </ul>
@@ -151,22 +151,22 @@
                     <ul class="nav flex-column sub-menu">
                         @can('social_medias.index')
                         <li class="nav-item d-none d-lg-block">
-                            {{-- <a class="nav-link" href="{{route('social_medias.index')}}">Redes sociales</a> --}}
+                            <a class="nav-link" href="{{route('social_medias.index')}}">Redes sociales</a>
                         </li>  
                         @endcan
                         @can('sliders.index')
                         <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{route('sliders.index')}}">Sliders</a> --}}
+                            <a class="nav-link" href="{{route('sliders.index')}}">Sliders</a>
                         </li>
                         @endcan
                         @can('subscriptions.index')
                         <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{route('subscriptions.index')}}">Suscripciones</a> --}}
+                            <a class="nav-link" href="{{route('subscriptions.index')}}">Suscripciones</a>
                         </li>  
                         @endcan
                         @can('promotions.index')
                         <li class="nav-item">
-                            {{-- <a class="nav-link" href="{{route('promotions.index')}}">Promociones</a> --}}
+                            <a class="nav-link" href="{{route('promotions.index')}}">Promociones</a>
                         </li>
                         @endcan
                     </ul>
@@ -192,18 +192,18 @@
         @endcan
         @can('users.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('users.index')}}">
+            <a class="nav-link" href="{{route('users.index')}}">
                 <i class="fas fa-user-tag menu-icon"></i>
                 <span class="menu-title">Usuarios</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
         @can('roles.index')
         <li class="nav-item">
-            {{-- <a class="nav-link" href="{{route('roles.index')}}">
+            <a class="nav-link" href="{{route('roles.index')}}">
                 <i class="fas fa-user-cog menu-icon"></i>
                 <span class="menu-title">Roles</span>
-            </a> --}}
+            </a>
         </li>
         @endcan
         {{--  @can(
@@ -221,17 +221,23 @@
                 <ul class="nav flex-column sub-menu">
                     @can('business.index')
                     <li class="nav-item d-none d-lg-block">
-                        {{-- <a class="nav-link" href="{{route('business.index')}}">Empresa</a> --}}
+                        <a class="nav-link" href="{{route('business.index')}}">Empresa</a>
                     </li> 
                     @endcan
                     @can('printers.index')
                     <li class="nav-item">
-                        {{-- <a class="nav-link" href="{{route('printers.index')}}">Impresora</a> --}}
+                        <a class="nav-link" href="{{route('printers.index')}}">Impresora</a>
                     </li> 
                     @endcan
                 </ul>
             </div>
         </li> 
         {{--  @endcan  --}}
+        <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/channel/UCMWSlUcDJS00-5pmicciZ_w">
+                <i class="fab fa-youtube menu-icon"></i>
+                <span class="menu-title">YouTube</span>
+            </a>
+        </li>
     </ul>
 </nav>

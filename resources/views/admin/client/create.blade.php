@@ -1,23 +1,26 @@
 @extends('layouts.admin')
-@section('title','Registrar producto')
+@section('title','Registrar cliente')
 @section('styles')
+
 {!! Html::style('treegrid/css/jquery.treegrid.css') !!}
+
 @endsection
 @section('options')
 @endsection
 @section('preference')
 @endsection
 @section('content')
+
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Registro de productos
+            Registro de clientes
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Productos</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Registro de productos</li>
+                <li class="breadcrumb-item"><a href="{{ route('clients.index') }}">Clientes</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Registro de clientes</li>
             </ol>
         </nav>
     </div>
@@ -27,10 +30,10 @@
                 <div class="card-body">
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Registro de productos</h4>
+                        <h4 class="card-title">Registro de clientes</h4>
                     </div>
 
-                    {!! Form::open(['route'=>'products.store', 'method'=>'POST','files'=>true]) !!}
+                    {!! Form::open(['route'=>'clients.store', 'method'=>'POST','files'=>true]) !!}
 
                     <div class="form-group">
                       <label for="name">Nombre</label>
@@ -38,44 +41,37 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="sell_price">Precio de venta</label>
-                      <input type="number" class="form-control" name="sell_price" id="sell_price" aria-describedby="emailHelpId" required>
+                      <label for="dni">Cédula</label>
+                      <input type="number" class="form-control" name="dni" id="dni" aria-describedby="helpId" placeholder="Cédula" required>
                     </div>
 
                     <div class="form-group">
-                      <label for="category_id">Categoría</label>
-                      <select class="form-control" name="category_id" id="category_id">
-                        @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
-                      </select>
+                      <label for="ruc">NIT</label>
+                      <input type="number" class="form-control" name="ruc" id="ruc" aria-describedby="helpId" placeholder="NIT">
+                      <small id="helpId" class="form-text text-muted">Este campo es opcional.</small>
                     </div>
 
                     <div class="form-group">
-                      <label for="provider_id">Proveedor</label>
-                      <select class="form-control" name="provider_id" id="provider_id">
-                        @foreach ($providers as $provider)
-                        <option value="{{ $provider->id }}">{{ $provider->name }}</option>
-                        @endforeach
-                      </select>
+                        <label for="address">Dirección</label>
+                        <input type="text" class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="Dirección">
+                        <small id="helpId" class="form-text text-muted">Este campo es opcional.</small>
                     </div>
 
-                    {{-- <div class="custom-file mb-4">
-                        <input type="file" class="custom-file-input" name="picture" id="picture" lang="es">
-                        <label class="custom-file-label" for="image">Seleccionar Archivo</label>
-                    </div> --}}
-
-                    <div class="card-body">
-                        <h4 class="card-title d-flex">Imagen del producto
-                            <small class="ml-auto align-self-end">
-                                <a href="dropify.html" class="font-weight-light" target="_balck">Seleccionar Archivo</a>
-                            </small>
-                        </h4>
-                        <input type="file" name="picture" id="picture" class="dropify">
+                    <div class="form-group">
+                        <label for="phone">Teléfono / Celular</label>
+                        <input type="number" class="form-control" name="phone" id="phone" aria-describedby="helpId" placeholder="Teléfono / Celular">
+                        <small id="helpId" class="form-text text-muted">Este campo es opcional.</small>
                     </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="Correo electrónico">
+                        <small id="helpId" class="form-text text-muted">Este campo es opcional.</small>
+                    </div>
+
 
                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
-                    <a href="{{ route('products.index') }}" class="btn btn-light">Cancelar</a>
+                    <a href="{{ route('clients.index') }}" class="btn btn-light">Cancelar</a>
                     
                     {!! Form::close() !!}
 
