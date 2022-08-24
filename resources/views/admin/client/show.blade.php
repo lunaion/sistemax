@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Detalles del producto')
+@section('title','Detalles del cliente')
 @section('styles')
 
 @endsection
@@ -16,13 +16,13 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            {{$product->name}}
+            {{$client->name}}
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li> 
-                <li class="breadcrumb-item"><a href="{{route('products.index')}}">Productos</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
+                <li class="breadcrumb-item"><a href="{{route('clients.index')}}">Clientes</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{$client->name}}</li>
             </ol>
         </nav>
     </div>
@@ -33,109 +33,63 @@
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="border-bottom text-center pb-4">
-
-                                <img src="{{ asset('image/'.$product->image) }}" alt="profile" class="img-lg mb-3">
-
-                                <h3>{{$product->name}}</h3>
+                                <h3>{{$client->name}}</h3>
                                 <div class="d-flex justify-content-between">
                                 </div>
                             </div>
-                            {{-- <div class="border-bottom py-4">
+                            <div class="border-bottom py-4">
                                 <div class="list-group">
                                     <button type="button" class="list-group-item list-group-item-action active">
-                                        Sobre proveedor
+                                        Sobre cliente
                                     </button>
                                     <button type="button" class="list-group-item list-group-item-action">
-                                        Productos
-                                    </button>
-                                    <button type="button" class="list-group-item list-group-item-action">
-                                        Registrar producto
+                                        Historial de compras
                                     </button>
                                 </div>
-                            </div> --}}
-
-                            <div class="py-4">
-                                <p class="clearfix">
-                                    <span class="float-left">
-                                        Estado
-                                    </span>
-                                    <span class="float-right text-muted">
-                                        {{ $product->status }}
-                                    </span>
-                                </p>
-                                <p class="clearfix">
-                                    <span class="float-left">
-                                        Proveedor
-                                    </span>
-                                    <span class="float-right text-muted">
-                                        {{-- Detalles del proveedor --}}
-                                        <a href="{{route('providers.show',$product->provider->id)}}">{{ $product->provider->name }}</a>
-                                    </span>
-                                </p>
-                                <p class="clearfix">
-                                    <span class="float-left">
-                                        Categoría
-                                    </span>
-                                    <span class="float-right text-muted">
-                                        {{-- Productos por categorías --}}
-                                        <a href="">{{ $product->category->name }}</a>
-                                    </span>
-                                </p>
-
                             </div>
-                            {{-- <button class="btn btn-primary btn-block">{{ $product->status }}</button> --}}
-                            @if ($product->status == 'ACTIVE')
-                            <button class="btn btn-success btn-block">{{ $product->status }}</button>
-                            @else
-                            <button class="btn btn-danger btn-block">{{ $product->status }}</button>
-                            @endif
                         </div>
-
-                        
-
                         <div class="col-lg-8 pl-lg-5">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h4>Detalles del producto</h4>
+                                    <h4>Detalles del cliente</h4>
                                 </div>
                             </div>
                             <div class="profile-feed">
                                 <div class="d-flex align-items-start profile-feed-item">
 
                                    
-                                    
+
                                     <div class="form-group col-md-6">
-                                        <strong><i class="fab fa-product-hunt mr-1"></i> Referencia</strong>
+                                        <strong><i class="fab fa-product-hunt mr-1"></i> Nombre</strong>
                                         <p class="text-muted">
-                                            {{$product->code}}
+                                            {{$client->name}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-address-card mr-1"></i> Nombre</strong>
+                                        <strong><i class="fas fa-address-card mr-1"></i> Documento</strong>
                                         <p class="text-muted">
-                                            {{$product->name}}
+                                            {{$client->dni}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fab fa-product-hunt mr-1"></i> Existencia</strong>
+                                        <strong><i class="fas fa-mobile mr-1"></i> NIT</strong>
                                         <p class="text-muted">
-                                            {{$product->stock}}
+                                            {{$client->ruc}}
                                         </p>
                                         <hr>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <strong>
-                                            <i class="fas fa-mobile mr-1"></i> Precio de venta</strong>
+                                        <strong><i class="fas fa-envelope mr-1"></i> Dirección</strong>
                                         <p class="text-muted">
-                                            {{$product->sell_price}}
+                                            {{$client->address}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-map-marked-alt mr-1"></i> Categoría</strong>
+                                        <strong><i class="fas fa-map-marked-alt mr-1"></i> Teléfono/Celular</strong>
                                         <p class="text-muted">
-                                            {{$product->category->name}}
+                                            {{$client->phone}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-map-marked-alt mr-1"></i> Proveedor</strong>
+                                        <strong><i class="fas fa-map-marked-alt mr-1"></i> Email</strong>
                                         <p class="text-muted">
-                                            {{$product->provider->name}}
+                                            {{$client->email}}
                                         </p>
                                         <hr>
                                     </div>
@@ -145,7 +99,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="{{route('products.index')}}" class="btn btn-primary float-right">Regresar</a>
+                    <a href="{{route('clients.index')}}" class="btn btn-primary float-right">Regresar</a>
                 </div>
             </div>
         </div>
