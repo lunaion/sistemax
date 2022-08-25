@@ -6,6 +6,7 @@ use App\Purchase;
 use Illuminate\Http\Request;
 use App\Http\Requests\Purchase\StoreRequest;
 use App\Http\Requests\Purchase\UpdateRequest;
+use App\Product;
 use App\Provider;
 
 class PurchaseController extends Controller
@@ -19,7 +20,8 @@ class PurchaseController extends Controller
     public function create()
     {
         $providers = Provider::get();
-        return view('admin.purchase.create', compact('providers'));
+        $products = Product::get();
+        return view('admin.purchase.create', compact('providers','products'));
     }
 
     public function store(StoreRequest $request)
