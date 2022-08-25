@@ -114,7 +114,7 @@
     {{-- @include('sweetalert::alert') --}}
     <!-- endinject -->
     <!-- Custom js for this page-->
-    {{--  {!! Html::script('melody/js/dashboard.js') !!}  --}}
+    {!! Html::script('melody/js/dashboard.js') !!} 
     <!-- End custom js for this page-->
     @yield('scripts')
 </body>

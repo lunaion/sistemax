@@ -35,7 +35,7 @@
 </div>
 
 <div class="form-group">
-    <button type="button" class="btn btn-primary float-right">Agregar producto</button>
+    <button type="button" id="agregar" class="btn btn-primary float-right">Agregar producto</button>
 </div>
 
 <div class="form-group">
