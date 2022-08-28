@@ -25,21 +25,19 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-
+                    {!! Form::open(['route'=>'purchases.store', 'method'=>'POST']) !!}
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title">Registro de compra</h4>
                     </div>
 
-                    {!! Form::open(['route'=>'purchases.store', 'method'=>'POST']) !!}
                     @include('admin.purchase._form')
-                    
-                    {!! Form::close() !!}
 
                 </div>
                 <div class="card-footer text-muted">
                     <button type="submit" class="btn btn-primary mr-2">Registrar</button>
                     <a href="{{ route('purchases.index') }}" class="btn btn-light">Cancelar</a>
                 </div>
+                    {!! Form::close() !!}
             </div>
         </div>
     </div>
@@ -48,8 +46,8 @@
 @section('scripts')
 {!! Html::script('melody/js/alerts.js') !!} 
 {!! Html::script('melody/js/avgrund.js') !!}
-{{-- <script>
-    /* $(document).ready(function () {
+<script>
+    $(document).ready(function () {
         $("#agregar").click(function () {
             agregar();
         });
@@ -61,49 +59,10 @@
 
     $("#guardar").hide();
 
-
-    var product_id1 = $('#product_id1');
-    product_id1.change(function(){
-        $.ajax({
-            url: "{{route('get_products_by_id')}}",
-            method: 'GET',
-            data:{
-                product_id: product_id1.val(),
-            },
-            success: function(data){
-                $("#code").val(data.code);
-            }
-        });
-    });
-    $(obtener_registro());
-    function obtener_registro(code){
-        $.ajax({
-            url: "{{route('get_products_by_barcode')}}",
-            type: 'GET',
-            data:{
-                code: code
-            },
-            dataType: 'json',
-            success:function(data){
-                console.log(data);
-                $("#product_id1").val(data.id);
-            }
-        });
-    }
-    $(document).on('keyup', '#code', function(){
-        var valorResultado = $(this).val();
-        if(valorResultado!=""){
-            obtener_registro(valorResultado);
-        }else{
-            obtener_registro();
-        }
-    })
-
-
     function agregar() {
 
-        product_id = $("#product_id1").val();
-        producto = $("#product_id1 option:selected").text();
+        product_id = $("#product_id").val();
+        producto = $("#product_id option:selected").text();
         quantity = $("#quantity").val();
         price = $("#price").val();
         impuesto = $("#tax").val();
@@ -158,6 +117,6 @@
         $("#total_pagar").val(total_pagar_html.toFixed(2));
         $("#fila" + index).remove();
         evaluar();
-    } */
-</script>  --}}
+    }
+</script>
 @endsection

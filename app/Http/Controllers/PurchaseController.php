@@ -8,6 +8,8 @@ use App\Http\Requests\Purchase\StoreRequest;
 use App\Http\Requests\Purchase\UpdateRequest;
 use App\Product;
 use App\Provider;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 class PurchaseController extends Controller
 {
@@ -26,8 +28,10 @@ class PurchaseController extends Controller
 
     public function store(StoreRequest $request)
     {
-        $purchase = Purchase::create($request->all());
-
+        $purchase = Purchase::create($request->all()+[
+            'user_id'=>Auth::user()->id,
+            'purchase_date'=>Carbon::now('America/Bogota'),
+        ]);
         foreach ($request->product_id as $key => $product) {
             $results[] = array("product_id"=>$request->product_id[$key],
                                "quantity"=>$request->quantity[$key], 
