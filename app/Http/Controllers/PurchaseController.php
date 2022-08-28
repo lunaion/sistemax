@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PurchaseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $purchases = Purchase::get();
