@@ -10,7 +10,7 @@
 <div class="form-group">
     <label for="tax">Impuesto</label>
     <input type="number"
-        class="form-control" name="tax" id="tax" aria-describedby="helpId" placeholder="19%">
+        class="form-control" name="tax" id="tax" aria-describedby="helpId" placeholder="%">
 </div>
 
 <div class="form-group">

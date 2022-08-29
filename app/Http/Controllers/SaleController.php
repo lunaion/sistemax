@@ -46,7 +46,7 @@ class SaleController extends Controller
     public function edit(Sale $sale)
     {
         $clients = Client::get();
-        return view('admin.sale.show', compact('sale'));
+        return view('admin.sale.edit', compact('sale'));
     }
 
     public function update(UpdateRequest $request, Sale $Sale)
