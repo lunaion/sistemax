@@ -28,8 +28,8 @@
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
             {{-- <a class="navbar-brand brand-logo" href="#"><img src="{{asset('melody/images/logo.svg')}}" alt="logo" />Sistemax</a>
             <a class="navbar-brand brand-logo-mini" href="index-2.html"><img src="{{asset('melody/images/logo-mini.svg')}}" alt="logo" />Sistemax</a> --}}
-            <a class="navbar-brand brand-logo" href="#">Sistemax</a>
-            <a class="navbar-brand brand-logo-mini" href="index-2.html">SMax</a>
+            <a class="navbar-brand brand-logo" href="#">SistemaX</a>
+            <a class="navbar-brand brand-logo-mini" href="index-2.html">SmaX</a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-stretch">
             <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -54,7 +54,7 @@
     
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-                <img src="{{asset('melody/images/faces/face16.jpg')}}" alt="profile" />
+                <img src="{{asset('melody/images/faces/Lunaion.png')}}" alt="profile" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                 <a class="dropdown-item">

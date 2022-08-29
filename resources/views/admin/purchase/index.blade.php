@@ -54,28 +54,32 @@
                                     <th>Fecha</th>
                                     <th>Total</th>
                                     <th>Estado</th>
-                                    <th>Acciones</th>
+                                    <th style="width:50px;">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($purchases as $purchase)
                                 <tr>
-                                    <th scope="row">{{ $purchase->id }}</th>
+                                    <th scope="row">
+                                        <a href="{{ route('purchases.show', $purchase) }}">{{ $purchase->id }}</a>
+                                    </th>
                                     <th>{{ $purchase->purchase_date }}</th>
                                     <th>{{ $purchase->total }}</th>
                                     <th>{{ $purchase->status }}</th>
                                     <td style="width: 50px;">
-                                        {!! Form::open(['route'=>['purchases.destroy',$purchase], 'method'=>'DELETE']) !!}
 
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('purchases.edit', $purchase) }}" title="Editar">
+                                        {{-- <a class="jsgrid-button jsgrid-edit-button" href="{{ route('purchases.edit', $purchase) }}" title="Editar">
                                             <i class="far fa-edit"></i>
-                                        </a>
+                                        </a> --}}
 
-                                        <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
+                                        {{-- <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
                                             <i class="far fa-trash-alt"></i>
-                                        </button>
+                                        </button> --}}
 
-                                        {!! Form::close() !!}
+                                        <a href="" class="jsgrid-button jsgrid-edit-button"><i class="far fa-file-pdf"></i></a>
+                                        <a href="" class="jsgrid-button jsgrid-edit-button"><i class="fas fa-print"></i></a>
+                                        <a href="{{ route('purchases.show', $purchase) }}" class="jsgrid-button jsgrid-edit-button"><i class="far fa-eye"></i></a>
+
                                     </td>
                                 </tr>
                                 @endforeach
