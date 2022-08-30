@@ -16,7 +16,7 @@
             <select class="form-control" name="product_id" id="product_id1">
                 <option value="" disabled selected>Selecccione un producto</option>
                 @foreach ($products as $product)
-                <option value="{{$product->id}}">{{$product->name}}</option>
+                <option value="{{$product->id}}_{{$product->stock}}_{{$product->sell_price}}">{{$product->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -34,9 +34,6 @@
         </div>
     </div>
   </div>
-
-
-
 
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -65,12 +62,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
 <div class="form-group">
     <button type="button" id="agregar" class="btn btn-primary float-right">Agregar producto</button>
 </div>
@@ -82,10 +73,10 @@
                 <tr>
                     <th>Eliminar</th>
                     <th>Producto</th>
-                    <th>Precio Venta (PEN)</th>
+                    <th>Precio Venta (COP)</th>
                     <th>Descuento</th>
                     <th>Cantidad</th>
-                    <th>SubTotal (PEN)</th>
+                    <th>SubTotal (COP)</th>
                 </tr>
             </thead>
             <tfoot>
@@ -94,15 +85,15 @@
                         <p align="right">TOTAL:</p>
                     </th>
                     <th>
-                        <p align="right"><span id="total">PEN 0.00</span> </p>
+                        <p align="right"><span id="total">COP 0.00</span> </p>
                     </th>
                 </tr>
                 <tr>
                     <th colspan="5">
-                        <p align="right">TOTAL IMPUESTO (18%):</p>
+                        <p align="right">TOTAL IMPUESTO (19%):</p>
                     </th>
                     <th>
-                        <p align="right"><span id="total_impuesto">PEN 0.00</span></p>
+                        <p align="right"><span id="total_impuesto">COP 0.00</span></p>
                     </th>
                 </tr>
                 <tr>
@@ -110,7 +101,7 @@
                         <p align="right">TOTAL PAGAR:</p>
                     </th>
                     <th>
-                        <p align="right"><span align="right" id="total_pagar_html">PEN 0.00</span> <input type="hidden"
+                        <p align="right"><span align="right" id="total_pagar_html">COP 0.00</span> <input type="hidden"
                                 name="total" id="total_pagar"></p>
                     </th>
                 </tr>

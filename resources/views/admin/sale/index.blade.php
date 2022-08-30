@@ -61,9 +61,9 @@
                                 @foreach ($sales as $sale)
                                 <tr>
                                     <th scope="row">
-                                        <a href="{{ route('purchases.show', $sale) }}">{{ $sale->id }}</a>
+                                        <a href="{{ route('sales.show', $sale) }}">{{ $sale->id }}</a>
                                     </th>
-                                    <th>{{ $sale->purchase_date }}</th>
+                                    <th>{{ $sale->sale_date }}</th>
                                     <th>{{ $sale->total }}</th>
                                     <th>{{ $sale->status }}</th>
                                     <td style="width: 50px;">
