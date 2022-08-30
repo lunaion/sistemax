@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('categories', 'CategoryController')->names('categories');
+Route::resource('cities', 'CityController')->names('cities');
 Route::resource('clients', 'ClientController')->names('clients');
 Route::resource('products', 'ProductController')->names('products');
 Route::resource('providers', 'ProviderController')->names('providers');
