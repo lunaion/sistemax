@@ -25,7 +25,9 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    
                     {!! Form::open(['route'=>'purchases.store', 'method'=>'POST']) !!}
+
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title">Registro de compra</h4>
                     </div>

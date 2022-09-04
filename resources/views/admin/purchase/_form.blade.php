@@ -24,8 +24,7 @@
 
 <div class="form-group">
     <label for="quantity">Cantidad</label>
-    <input type="number"
-        class="form-control" name="quantity" id="quantity" aria-describedby="helpId" placeholder="Cantidad">
+    <input type="number" class="form-control" name="quantity" id="quantity" aria-describedby="helpId">
 </div>
 
 <div class="form-group">

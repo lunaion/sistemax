@@ -50,9 +50,14 @@ class SaleController extends Controller
         return redirect()->route('sales.index');
     }
 
-    public function show(Sale $Sale)
-    {
-        return view('admin.sale.show', compact('sale'));
+    public function show(Sale $sale)
+    {   
+        $subtotal = 0;
+        $saleDetails = $sale->saleDetails;
+        foreach ($saleDetails as $saleDetail) {
+            $subtotal += $saleDetail->quantity * $saleDetail->price - $saleDetail->quantity * $saleDetail->price * $saleDetail->discount/100;
+        }
+        return view('admin.sale.show', compact('sale', 'saleDetails', 'subtotal'));
     }
 
     public function edit(Sale $sale)

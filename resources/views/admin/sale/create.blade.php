@@ -47,7 +47,6 @@
         </div>
     </div>
 </div>
-
 @endsection
 @section('scripts')
 {!! Html::script('melody/js/alerts.js') !!}
@@ -71,7 +70,7 @@
 
     function mostrarValores(){
         datosProducto = document.getElementById('product_id').value.split('_');
-        $("#proce").val(datosProducto[2]);
+        $("#price").val(datosProducto[2]);
         $("#stock").val(datosProducto[1]);
     }
 
