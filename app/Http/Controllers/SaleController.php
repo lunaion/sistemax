@@ -35,7 +35,7 @@ class SaleController extends Controller
     {
         $sale = Sale::create($request->all()+[
             'user_id'=>Auth::user()->id,
-            'purchase_date'=>Carbon::now('America/Bogota'),
+            'sale_date'=>Carbon::now('America/Bogota'),
         ]);
 
         foreach ($request->product_id as $key => $product) {
@@ -76,5 +76,15 @@ class SaleController extends Controller
     {
         /* $Sale->delete();
         return redirect()->route('Sales.index'); */
+    }
+
+    public function pdf(Sale $sale)
+    {   
+        $subtotal = 0;
+        $saleDetails = $sale->saleDetails;
+        foreach ($saleDetails as $saleDetail) {
+            $subtotal += $saleDetail->quantity * $saleDetail->price - $saleDetail->quantity * $saleDetail->price * $saleDetail->discount/100;
+        }
+        return view('admin.sale.show', compact('sale', 'saleDetails', 'subtotal'));
     }
 }
