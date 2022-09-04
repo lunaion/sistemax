@@ -28,6 +28,7 @@ Route::resource('sales', 'SaleController')->names('sales');
 
 Route::get('purchases/pdf/{purchase}', 'PurchaseController@pdf')->name('purchases.pdf');
 Route::get('sales/pdf/{sale}', 'SaleController@pdf')->name('sales.pdf');
+Route::get('sales/print/{sale}', 'SaleController@print')->name('sales.print');
 
 Route::get('/prueba', function () {
     return view('prueba');

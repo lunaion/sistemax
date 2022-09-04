@@ -11,7 +11,7 @@ use App\Provider;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
-use Barryvdh\DomPDF\Facade\PDF;
+use PDF;
 
 class PurchaseController extends Controller
 {
