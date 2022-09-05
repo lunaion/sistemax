@@ -39,6 +39,9 @@ Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.d
 Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
 Route::post('sales/report_results', 'ReportController@report_results')->name('report.results');
 
+Route::resource('users', 'UserController')->names('users');
+Route::resource('roles', 'RoleController')->names('roles');
+
 Route::get('/prueba', function () {
     return view('prueba');
 });
