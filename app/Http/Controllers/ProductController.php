@@ -31,7 +31,7 @@ class ProductController extends Controller
         if ($request->hasFile('picture')) {
             $file = $request->file('picture');
             $image_name = time().'_'.$file->getClientOriginalName();
-            $file->move(public_path("/image/products/"),$image_name);
+            $file->move(public_path("/image"),$image_name);
         }
 
         $product = Product::create($request->all()+[
@@ -60,7 +60,7 @@ class ProductController extends Controller
         if ($request->hasFile('picture')) {
             $file = $request->file('picture');
             $image_name = time().'_'.$file->getClientOriginalName();
-            $file->move(public_path("/image/products/"),$image_name);
+            $file->move(public_path("/image"),$image_name);
         }
 
         $product->update($request->all()+[
@@ -73,5 +73,16 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('products.index');
+    }
+
+    public function change_status(Product $product){
+        if ($product->status == 'ACTIVE') {
+            $product->update(['status'=>'DESACTIVATED']);
+            return redirect()->back();
+        } else {
+            $product->update(['status'=>'ACTIVE']);
+            return redirect()->back();
+        }
+        
     }
 }
