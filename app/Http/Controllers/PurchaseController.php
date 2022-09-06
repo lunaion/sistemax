@@ -18,6 +18,12 @@ class PurchaseController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('can:providers.create')->only(['create','store']);
+        $this->middleware('can:providers.index')->only(['index']);
+        $this->middleware('can:providers.show')->only(['show']);
+        $this->middleware('can:change.status.purchases')->only(['change_status']);
+        $this->middleware('can:purchase.pdf')->only(['pdf']);
+        $this->middleware('can:upload.purchases')->only(['upload']);
     }
 
     public function index()

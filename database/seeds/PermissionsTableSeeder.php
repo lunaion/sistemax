@@ -119,5 +119,17 @@ class PermissionsTableSeeder extends Seeder
             'slug'=>'cities.destroy',
             'description'=>'Eliminar cualquier dato de una ciudad del sistema',
         ]);
+
+        // Reportes
+        Permission::create([
+            'name'=>'Reporte por día',
+            'slug'=>'reports.day',
+            'description'=>'Permite ver los reportes de ventas por día.',
+        ]);
+        Permission::create([
+            'name'=>'Reporte por fechas',
+            'slug'=>'reports.date',
+            'description'=>'Permite ver los reportes por rango de fechas de las ventas',
+        ]);
     }
 }

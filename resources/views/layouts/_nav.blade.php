@@ -27,6 +27,11 @@
                     <a class="nav-link" href="{{route('categories.index')}}">Categorias</a>
                 </li> 
                 @endcan
+                @can('users.index')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
+                </li> 
+                @endcan
         </li> 
         {{--  @endcan  --}}
 
