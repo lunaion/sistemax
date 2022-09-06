@@ -5,42 +5,102 @@
                 <div class="profile-image">
                     <img src="{{asset('melody/images/faces/Lunaion.png')}}" alt="image" />
                 </div>
+                <div class="profile-name">
+                    <p class="name">
+                        Bienvenido Javier
+                    </p>
+                    <p class="designation">
+                        Super Admin
+                    </p>
+                </div>
             </div>
         </li>
-
-        {{--  @can('business.index' || 'printers.index' )  --}}
+        
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false"
-                aria-controls="page-layouts">
-                <i class="fas fa-cogs menu-icon"></i>
-                <span class="menu-title">Configuración</span>
+            <a class="nav-link" href="{{route('home')}}">
+                <i class="fa fa-home menu-icon"></i>
+                <span class="menu-title">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#page-general" aria-expanded="false"
+                aria-controls="page-general">
+                <i class="fas fa-sitemap menu-icon"></i>
+                <span class="menu-title">General</span>
                 <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="page-general">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="{{route('categories.index')}}">Categorías</a>
+                    </li> 
 
-                @can('products.index')
-                <li class="nav-item d-none d-lg-block">
-                    <a class="nav-link" href="{{route('products.index')}}">Productos</a>
-                </li> 
-                @endcan
-                @can('categories.index')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories.index')}}">Categorias</a>
-                </li> 
-                @endcan
-                @can('users.index')
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
-                </li> 
-                @endcan
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('cities.index')}}">Ciudades</a>
+                    </li> 
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('providers.index')}}">Proveedores</a>
+                    </li> 
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
+                    </li> 
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
+                    </li> 
+
+                    <div class="collapse" id="page-layouts">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item d-none d-lg-block">
+                                <a class="nav-link" href="{{route('business.index')}}">Empresa</a>
+                            </li> 
+        
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('printers.index')}}">Impresora</a>
+                            </li> 
+                        </ul>
+                    </div>
+
+                </ul>
+            </div>
         </li> 
-        {{--  @endcan  --}}
 
         <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="{{route('providers.index')}}" aria-expanded="false"
-                aria-controls="page-layouts">
-                <i class="fas fa-cogs menu-icon"></i>
+            <a class="nav-link" href="#">
+                <i class="fa fa-inbox menu-icon"></i>
                 <span class="menu-title">Garantías</span>
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#page-reports" aria-expanded="false"
+                aria-controls="page-reports">
+                <i class="fas fa-tasks menu-icon"></i>
+                <span class="menu-title">Reportes</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="page-reports">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="{{route('reports.day')}}">Reportes por día</a>
+                    </li> 
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('reports.date')}}">Reportes por fecha</a>
+                    </li> 
+                </ul>
+            </div>
+        </li> 
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                <i class="fa fa-info-circle menu-icon"></i>
+                <span class="menu-title">Acerca de...</span>
+            </a>
+        </li>
+
     </ul>
 </nav>
