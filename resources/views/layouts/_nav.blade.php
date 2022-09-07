@@ -41,15 +41,27 @@
                     </li> 
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('cities.index')}}">Modelos</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('cities.index')}}">Marcas</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('providers.index')}}">Proveedores</a>
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
+                        <a class="nav-link" href="{{route('providers.index')}}">Sedes</a>
                     </li> 
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
+                    </li> 
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
                     </li> 
 
                     <div class="collapse" id="page-layouts">
