@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\City;
+use App\Exports\CitiesExport;
 use App\Http\Requests\Category\StoreRequest;
 use App\Http\Requests\Category\UpdateRequest;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -56,5 +58,10 @@ class CityController extends Controller
     {
         $city->delete();
         return redirect()->route('cities.index');
+    }
+
+    public function exportsExcel() 
+    {
+        return Excel::download(new CitiesExport, 'Lista-Ciudades.xlsx');
     }
 }

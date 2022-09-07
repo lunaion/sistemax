@@ -68,6 +68,10 @@
                                     <td style="width: 50px;">
                                         {!! Form::open(['route'=>['cities.destroy',$city], 'method'=>'DELETE']) !!}
 
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('cities.excel', $city) }}" title="Exportar Excel">
+                                            <i class="far fa-file-excel"></i>
+                                        </a>
+                                        
                                         <a class="jsgrid-button jsgrid-edit-button" href="{{ route('cities.edit', $city) }}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>

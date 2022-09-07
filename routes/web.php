@@ -26,6 +26,7 @@ Route::resource('providers', 'ProviderController')->names('providers');
 Route::resource('purchases', 'PurchaseController')->names('purchases')->except(['update', 'destroy', 'edit']);
 Route::resource('sales', 'SaleController')->names('sales')->except(['update', 'destroy', 'edit']);
 Route::get('purchases/pdf/{purchase}', 'PurchaseController@pdf')->name('purchases.pdf');
+Route::get('citys-list-excel', 'CityController@exportsExcel')->name('cities.excel');
 Route::get('sales/pdf/{sale}', 'SaleController@pdf')->name('sales.pdf');
 Route::get('sales/print/{sale}', 'SaleController@print')->name('sales.print');
 Route::resource('business', 'BusinessController')->names('business')->only(['index', 'update']);
