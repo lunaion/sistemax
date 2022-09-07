@@ -13,10 +13,10 @@ class ReportController extends Controller
     }
 
     public function reports_day(){
-        
+        return view('admin.business.index');
     }
     public function reports_date(){
-
+        return view('admin.business.index');
     }
     public function report_results(Request $request){
 
