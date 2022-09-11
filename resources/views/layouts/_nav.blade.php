@@ -45,7 +45,11 @@
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('cities.index')}}">Marcas</a>
+                        <a class="nav-link" href="{{route('marks.index')}}">Marcas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('parts.index')}}">Partes</a>
                     </li>
 
                     <li class="nav-item">
@@ -62,8 +66,8 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
-                    </li> 
-
+                    </li>
+                    
                     <div class="collapse" id="page-layouts">
                         <ul class="nav flex-column sub-menu">
                             <li class="nav-item d-none d-lg-block">
@@ -75,7 +79,7 @@
                             </li> 
                         </ul>
                     </div>
-
+                    
                 </ul>
             </div>
         </li> 

@@ -19,6 +19,8 @@ Route::get('/', function () {
 });
 
 Route::resource('categories', 'CategoryController')->names('categories');
+Route::resource('marks', 'MarkController')->names('marks');
+Route::resource('parts', 'PartController')->names('parts');
 Route::resource('cities', 'CityController')->names('cities');
 Route::resource('clients', 'ClientController')->names('clients');
 Route::resource('products', 'ProductController')->names('products');

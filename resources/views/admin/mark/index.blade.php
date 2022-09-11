@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Gestión de ciudades')
+@section('title','Gestión de marcas')
 @section('styles')
 
 <style type="text/css">
@@ -21,12 +21,12 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Ciudades
+            Marcas
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Ciudades</li>
+                <li class="breadcrumb-item active" aria-current="page">Marcas</li>
             </ol>
         </nav>
     </div>
@@ -36,42 +36,39 @@
                 <div class="card-body">
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Ciudades</h4>
+                        <h4 class="card-title">Marcas</h4>
                         <div class="btn-group">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-ellipsis"></i>
                             </a>
                             {{-- <div class="dropdown-menu dropdown-menu-right"> --}}
-                            <a href="{{route('cities.create')}}" type="button" class="btn btn-info ">
+                            <a href="{{route('marks.create')}}" type="button" class="btn btn-info ">
                                 <i class="fas fa-plus"></i> Nuevo
                             </a>
-                            <a href="{{route('cities.excel')}}" type="button" class="btn btn-success ">
-                                <i class="fas fa-file-excel"></i> Exportable
-                            </a>
                         </div>
-                    </div> <br>
+                    </div>
                     <div class="table-responsive">
                         <table id="order-listing" class="table">
                             <thead>
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Comentario</th>
+                                    <th>Descripción</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($cities as $city)
+                                @foreach ($marks as $mark)
                                 <tr>
-                                    <th scope="row">{{ $city->id }}</th>
+                                    <th scope="row">{{ $mark->id }}</th>
                                     <td>
-                                        <a href="{{ route('cities.show', $city) }}">{{ $city->name }}</a>
+                                        <a href="{{ route('marks.show', $mark) }}">{{ $mark->name }}</a>
                                     </td>
-                                    <td>{{ $city->comment }}</td>
+                                    <td>{{ $mark->description }}</td>
                                     <td style="width: 50px;">
-                                        {!! Form::open(['route'=>['cities.destroy',$city], 'method'=>'DELETE']) !!}
-                                        
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('cities.edit', $city) }}" title="Editar">
+                                        {!! Form::open(['route'=>['marks.destroy',$mark], 'method'=>'DELETE']) !!}
+
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('marks.edit', $mark) }}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>
 
