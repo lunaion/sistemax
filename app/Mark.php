@@ -12,4 +12,7 @@ class Mark extends Model
         'image',
     ];
 
+    public function marks(){
+        return $this->hasMany(Mark::class);
+    }
 }

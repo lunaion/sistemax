@@ -61,7 +61,7 @@ class CityController extends Controller
     }
 
     public function exportsExcel() 
-    {
+    {     
         return Excel::download(new CitiesExport, 'Lista-Ciudades.xlsx');
     }
 }

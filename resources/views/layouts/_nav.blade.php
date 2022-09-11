@@ -38,14 +38,22 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('cities.index')}}">Ciudades</a>
-                    </li> 
+                    </li>
+                    
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" href="{{route('business.index')}}">Empresa</a>
+                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('cities.index')}}">Modelos</a>
-                    </li>
+                        <a class="nav-link" href="{{route('printers.index')}}">Impresora</a>
+                    </li> 
                     
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('marks.index')}}">Marcas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('modelos.index')}}">Modelos</a>
                     </li>
 
                     <li class="nav-item">
@@ -54,6 +62,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('providers.index')}}">Proveedores</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
                     </li> 
 
                     <li class="nav-item">
@@ -61,24 +73,8 @@
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
-                    </li> 
-
-                    <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
-                    </li>
-                    
-                    <div class="collapse" id="page-layouts">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item d-none d-lg-block">
-                                <a class="nav-link" href="{{route('business.index')}}">Empresa</a>
-                            </li> 
-        
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('printers.index')}}">Impresora</a>
-                            </li> 
-                        </ul>
-                    </div>
+                    </li> 
                     
                 </ul>
             </div>
