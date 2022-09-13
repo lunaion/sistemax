@@ -10,7 +10,7 @@ class City extends Model
         'name', 'comment',
     ];
 
-    public function cities(){
-        return $this->hasMany(sities::class);
+    public function sede(){
+        return $this->hasMany(Sede::class);
     }
 }

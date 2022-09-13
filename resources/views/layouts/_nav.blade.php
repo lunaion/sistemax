@@ -73,7 +73,7 @@
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('providers.index')}}">Sedes</a>
+                        <a class="nav-link" href="{{route('sedes.index')}}">Sedes</a>
                     </li> 
 
                     <li class="nav-item">

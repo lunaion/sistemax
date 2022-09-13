@@ -28,16 +28,16 @@
 
                     <div class="form-group">
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="" aria-describedby="helpId" required>
                       </div>
                       <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="" aria-describedby="helpId" required>
                       </div>
                       
                       <div class="form-group">
                           <label for="password">Contraseña</label>
-                          <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId">
+                          <input type="password" name="password" id="password" class="form-control" placeholder="" aria-describedby="helpId" required>
                       </div>
 
                     @include('admin.user._form')

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Gestión de impresora')
+@section('title','Gestión de sedes')
 @section('styles')
 
 <style type="text/css">
@@ -21,12 +21,12 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Impresora
+            Sedes
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Impresora</li>
+                <li class="breadcrumb-item active" aria-current="page">Sedes</li>
             </ol>
         </nav>
     </div>
@@ -36,13 +36,13 @@
                 <div class="card-body">
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Impresora</h4>
+                        <h4 class="card-title">Sedes</h4>
                         <div class="btn-group">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-ellipsis"></i>
                             </a>
                             {{-- <div class="dropdown-menu dropdown-menu-right"> --}}
-                            <a href="{{route('clients.create')}}" type="button" class="btn btn-info ">
+                            <a href="{{route('sedes.create')}}" type="button" class="btn btn-info ">
                                 <i class="fas fa-plus"></i> Nuevo
                             </a>
                         </div>
@@ -53,26 +53,26 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Cédula</th>
-                                    <th>Teléfono/Celular</th>
-                                    <th>Correo electrónico</th>
+                                    <th>Ciudad</th>
+                                    <th>Contacto</th>
+                                    <th>Estado</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
-                            {{-- <tbody>
-                                @foreach ($clients as $client)
+                            <tbody>
+                                @foreach ($sedes as $sede)
                                 <tr>
-                                    <th scope="row">{{ $client->id }}</th>
+                                    <th scope="row">{{ $sede->id }}</th>
                                     <td>
-                                        <a href="{{ route('clients.show', $client) }}">{{ $client->name }}</a>
+                                        <a href="{{ route('sedes.show', $sede) }}">{{ $sede->name }}</a>
                                     </td>
-                                    <td>{{ $client->dni }}</td>
-                                    <td>{{ $client->phone }}</td>
-                                    <td>{{ $client->email}}</td>
+                                    <td>{{ $sede->city->name }}</td>
+                                    <td>{{ $sede->user->name }}</td>
+                                    <td>{{ $sede->status}}</td>
                                     <td style="width: 50px;">
-                                        {!! Form::open(['route'=>['clients.destroy',$client], 'method'=>'DELETE']) !!}
+                                        {!! Form::open(['route'=>['sedes.destroy',$sede], 'method'=>'DELETE']) !!}
 
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('clients.edit', $client) }}" title="Editar">
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('sedes.edit', $sede) }}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>
 
@@ -84,7 +84,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
-                            </tbody> --}}
+                            </tbody>
                         </table>
                     </div>
                 </div>
