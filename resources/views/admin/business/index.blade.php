@@ -164,15 +164,11 @@
                     </div>
                     <div class="col-md-4">
 
-                      
-                       
                         <div class="form-group">
                             <label for="contact_text">Contacta con nosotros</label>
                             <textarea class="form-control" name="contact_text" id="contact_text"
                                 rows="3" required>{{$business->contact_text}}</textarea>
                         </div>
-
-                        
 
                         <div class="form-group">
                             <label for="hours_of_operation">Horario de atención</label>
@@ -197,21 +193,13 @@
                                 value="{{$business->phone}}" required>
                         </div>
                         <div class="form-group">
-
-                                    <label for="file">Logo</label>
-                                    
-                                        <div class="file-loading">
-                                            <input id="file" name="file" type="file">
-                                        </div>
-                                 
-                                
+                            <label for="file">Logo</label>
+                                <div class="file-loading">
+                                    <input id="file" name="file" type="file">
+                                </div>
                         </div>
-
-
-                  
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -223,11 +211,8 @@
                         </div>
                     </div>
                 </div>
-
                 <input type="hidden" name="latitude" id="latitude" value="{{$business->latitude}}">
                 <input type="hidden" name="length" id="longitude" value="{{$business->length}}">
-
-
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-success">Actualizar</button>
@@ -349,7 +334,5 @@ google.maps.event.addDomListener(window, 'load', init);
             });
         }
 </script>  
-
-{!! Html::script('melody/js/data-table.js') !!}
 {!! Html::script('melody/js/dropify.js') !!}
 @endsection

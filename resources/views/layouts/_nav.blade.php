@@ -57,6 +57,10 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('modelos.index')}}">Operaciones</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('parts.index')}}">Partes</a>
                     </li>
 
