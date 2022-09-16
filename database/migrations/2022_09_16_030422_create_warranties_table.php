@@ -15,6 +15,19 @@ class CreateWarrantiesTable extends Migration
     {
         Schema::create('warranties', function (Blueprint $table) {
             $table->id();
+            /* $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('category_id');
+            $table->string('ticket_int')->unique();
+            $table->string('ticket_prov')->unique();
+            $table->foreign('mark_id')->references('id')->on('marks');
+            $table->unsignedBigInteger('category_id');
+            $table->string('plate')->unique();
+            $table->string('serial')->unique();
+            $table->enum('status',['ACTIVE','DESACTIVATED'])->default('ACTIVE');
+            $table->unsignedBigInteger('city_id');
+            $table->foreign('city_id')->references('id')->on('cities');
+            $table->unsignedBigInteger('sede_id');
+            $table->foreign('sede_id')->references('id')->on('sedes'); */
             $table->timestamps();
         });
     }
