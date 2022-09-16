@@ -21,7 +21,13 @@ class Sede extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function operation(){
+        return $this->belongsTo(Operation::class);
+    }
+
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    
 }

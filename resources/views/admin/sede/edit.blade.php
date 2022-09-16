@@ -56,8 +56,8 @@
                       </div>
 
                     <div class="form-group">
-                      <label for="category_id">Ciudad</label>
-                      <select class="form-control" name="category_id" id="category_id">
+                      <label for="city_id">Ciudad</label>
+                      <select class="form-control" name="city_id" id="city_id">
                         @foreach ($cities as $city)
                         <option value="{{ $city->id }}" 
                             @if ($city->id == $sede->city_id)
@@ -69,8 +69,8 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="provider_id">Contacto</label>
-                      <select class="form-control" name="provider_id" id="provider_id">
+                      <label for="user_id">Contacto</label>
+                      <select class="form-control" name="user_id" id="user_id">
                         @foreach ($users as $user)
                         <option value="{{ $user->id }}"
                             @if ($user->id == $sede->user_id)

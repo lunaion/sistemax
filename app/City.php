@@ -13,4 +13,8 @@ class City extends Model
     public function sede(){
         return $this->hasMany(Sede::class);
     }
+
+    public function operation(){
+        return $this->hasMany(Operation::class);
+    }
 }
