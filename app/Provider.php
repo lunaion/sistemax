@@ -10,7 +10,7 @@ class Provider extends Model
         'name', 'email', 'nit_number', 'address', 'phone',
     ];
     
-    public function products(){
-        return $this->hasMany(Product::class);
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
     }
 }

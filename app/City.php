@@ -17,4 +17,8 @@ class City extends Model
     public function operation(){
         return $this->hasMany(Operation::class);
     }
+
+    public function warranty(){
+        return $this->hasMany(Warranty::class);
+    }
 }

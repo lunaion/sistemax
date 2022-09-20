@@ -15,4 +15,8 @@ class Modelo extends Model
         return $this->belongsTo(Mark::class);
     }
 
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
+    }
+
 }

@@ -10,4 +10,8 @@ class Part extends Model
         'name', 
         'description',
     ];
+
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
+    }
 }

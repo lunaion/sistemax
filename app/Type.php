@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mark extends Model
+class Type extends Model
 {
     protected $fillable = [
-        'name',
+        'name', 
         'description',
-        'image',
     ];
 
-    public function warranty(){
+    public function warranties(){
         return $this->hasMany(Warranty::class);
     }
 }

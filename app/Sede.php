@@ -29,5 +29,9 @@ class Sede extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
+    }
+
     
 }

@@ -20,4 +20,8 @@ class Operation extends Model
     public function sede(){
         return $this->belongsTo(Sede::class);
     }
+
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
+    }
 }

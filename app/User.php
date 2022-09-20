@@ -42,4 +42,8 @@ class User extends Authenticatable
     public function sede(){
         return $this->hasMany(Sede::class);
     }
+
+    public function warranty(){
+        return $this->belongsTo(Warranty::class);
+    }
 }

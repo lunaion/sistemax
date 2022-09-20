@@ -77,6 +77,10 @@
                     </li> 
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('types.index')}}">Tipos</a>
+                    </li> 
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
                     </li> 
                     
@@ -85,7 +89,7 @@
         </li> 
 
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('warranties.index')}}">
                 <i class="fa fa-inbox menu-icon"></i>
                 <span class="menu-title">Garantías</span>
             </a>
