@@ -68,7 +68,21 @@
                                     </td>
                                     <td>{{ $sede->city->name }}</td>
                                     <td>{{ $sede->user->name }}</td>
-                                    <td>{{ $sede->status}}</td>
+
+                                    @if ($sede->status == 'ACTIVE')
+                                    <td>
+                                        <a class="jsgrid-button btn btn-success" href="{{ route('change.status.sedes', $sede) }}" title="Editar">
+                                            Activo <i class="fas fa-check"></i>
+                                        </a>
+                                    </td>
+                                    @else
+                                    <td>
+                                        <a class="jsgrid-button btn btn-danger" href="{{ route('change.status.sedes', $sede) }}" title="Editar">
+                                            Desactivado <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                    @endif
+
                                     <td style="width: 50px;">
                                         {!! Form::open(['route'=>['sedes.destroy',$sede], 'method'=>'DELETE']) !!}
 

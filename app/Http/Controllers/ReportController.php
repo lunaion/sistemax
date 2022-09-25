@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Warranty;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -13,12 +15,19 @@ class ReportController extends Controller
     }
 
     public function reports_day(){
-        return view('admin.business.index');
+        $warranties = Warranty::whereDate('warranty_date', Carbon::today('America/Bogota'))->get();
+        return view('admin.report.reports_day', compact('warranties'));
     }
     public function reports_date(){
-        return view('admin.business.index');
+        $warranties = Warranty::whereDate('warranty_date', Carbon::today('America/Bogota'))->get();
+        return view('admin.report.reports_date', compact('warranties'));
     }
     public function report_results(Request $request){
+        $fechaInicio = $request->fecha_ini.'00:00:00';
+        $fechaFinal = $request->fecha_fin.'23:59:59';
+        $warranties = Warranty::whereBetween('warranty_date', [$fechaInicio, $fechaFinal])->get();
 
+        /* return redirect()->route('reports.date', compact('warranties')); */
+        return view('admin.report.reports_date', compact('warranties'));
     }
 }

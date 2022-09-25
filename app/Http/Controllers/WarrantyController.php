@@ -43,8 +43,8 @@ class WarrantyController extends Controller
         $modelos = Modelo::get();
         $parts = Part::get();
         $cities = City::get();
-        $sedes = Sede::get();
-        $operations = Operation::get();
+        $sedes = Sede::where('status', 'ACTIVE')->get();
+        $operations = Operation::where('status', 'ACTIVE')->get();
         $providers = Provider::get();
 
         return view('admin.warranty.create', compact('categories','types','marks','modelos','parts','cities','sedes','operations','providers'));

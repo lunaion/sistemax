@@ -105,11 +105,11 @@
             <div class="collapse" id="page-reports">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" href="#">Reportes por día</a>
+                        <a class="nav-link" href="{{route('reports.day')}}">Reportes por día</a>
                     </li> 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reportes por fecha</a>
+                        <a class="nav-link" href="{{route('reports.date')}}">Reportes por fecha</a>
                     </li> 
                 </ul>
             </div>

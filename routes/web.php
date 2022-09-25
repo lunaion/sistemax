@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('sales/reports_day', 'ReportController@reports_day')->name('reports.day');
-Route::get('sales/reports_date', 'ReportController@reports_date')->name('reports.date');
-Route::post('sales/report_results', 'ReportController@report_results')->name('report.results');
+Route::get('warranties/reports_day', 'ReportController@reports_day')->name('reports.day');
+Route::get('warranties/reports_date', 'ReportController@reports_date')->name('reports.date');
+Route::post('warranties/report_results', 'ReportController@report_results')->name('report.results');
 
 Route::resource('business', 'BusinessController')->names('business')->only(['index', 'update']);
 Route::resource('printers', 'PrinterController')->names('printers')->only(['index', 'update']);
@@ -44,9 +44,11 @@ Route::get('citys-list-excel', 'CityController@exportsExcel')->name('cities.exce
 Route::get('sales/pdf/{sale}', 'SaleController@pdf')->name('sales.pdf');
 Route::get('sales/print/{sale}', 'SaleController@print')->name('sales.print');
 Route::get('purchases/upload/{purchase}', 'PurchaseController@upload')->name('upload.purchases');
-Route::get('change_status/products/{products}', 'ProductController@change_status')->name('upload.status.products');
-Route::get('change_status/purchases/{purchase}', 'PurchaseController@change_status')->name('upload.status.purchases');
-Route::get('change_status/sales/{sales}', 'SaleController@change_status')->name('upload.status.sales');
+
+Route::get('change_status/operations/{operation}', 'OperationController@change_status')->name('change.status.operations');
+Route::get('change_status/sedes/{sede}', 'SedeController@change_status')->name('change.status.sedes');
+Route::get('change_status/warranties/{warranty}', 'WarrantyController@change_status')->name('change.status.warranties');
+
 
 Route::resource('users', 'UserController')->names('users');
 Route::resource('roles', 'RoleController')->names('roles');

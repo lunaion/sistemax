@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Gestión de garantias')
+@section('title','Reporte por día')
 @section('styles')
 
 <style type="text/css">
@@ -21,12 +21,12 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Garantías
+            Reporte por día
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom">
+            <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Garantías</li>
+                <li class="breadcrumb-item active" aria-current="page">Reporte por día</li>
             </ol>
         </nav>
     </div>
@@ -34,19 +34,25 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-
+                    {!! Form::open(['route'=>'report.results', 'method'=>'POST']) !!}
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Garantías</h4>
-                        <div class="btn-group">
-                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis"></i>
-                            </a>
-                            {{-- <div class="dropdown-menu dropdown-menu-right"> --}}
-                            <a href="{{route('warranties.create')}}" type="button" class="btn btn-info ">
-                                <i class="fas fa-plus"></i> Nuevo
-                            </a>
+                    
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-4 text-center">
+                            <span>Fecha de consulta: <b> </b></span>
+                            <div class="form-group">
+                                <strong>{{\Carbon\Carbon::now()->format('d/m/Y')}}</strong>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 text-center">
+                            <span>Cantidad de registros: <b></b></span>
+                            <div class="form-group"></div>
+                                <strong>{{$warranties->count()}}</strong>
                         </div>
                     </div>
+
                     <div class="table-responsive">
                         <table id="order-listing" class="table">
                             <thead>
@@ -78,21 +84,7 @@
                                     <td>{{ $warranty->serial }}</td>
                                     <td>{{ $warranty->modelo->name }}</td>
                                     <td>{{ $warranty->sede->name }}</td>
-                                    
-                                    @if ($warranty->status == 'VALID')
-                                    <td>
-                                        <a class="jsgrid-button btn btn-success" href="{{ route('change.status.warranties', $warranty) }}" title="Editar">
-                                            Valida <i class="fas fa-check"></i>
-                                        </a>
-                                    </td>
-                                    @else
-                                    <td>
-                                        <a class="jsgrid-button btn btn-danger" href="{{ route('change.status.warranties', $warranty) }}" title="Editar">
-                                            Cancelada <i class="fas fa-times"></i>
-                                        </a>
-                                    </td>
-                                    @endif
-
+                                    <td>{{ $warranty->status}}</td>
                                     <td style="width: 50px;">
                                         {!! Form::open(['route'=>['warranties.destroy',$warranty], 'method'=>'DELETE']) !!}
 
