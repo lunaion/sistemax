@@ -57,15 +57,13 @@ class WarrantyController extends Controller
             'user_id'=>Auth::user()->id,
             'warranty_date'=>Carbon::now('America/Bogota'),
         ]);
-
-        Warranty::create($request->all());
         
         return redirect()->route('warranties.index');
     }
 
     public function show(Warranty $warranty)
     {
-        return view('admin.warranty.show', compact('categories','types','marks','modelos','parts','cities','sedes','operations','providers'));
+        return view('admin.warranty.show', compact('warranty'));
     }
 
     public function edit(Warranty $warranty)
@@ -90,8 +88,8 @@ class WarrantyController extends Controller
 
     public function destroy(Warranty $warranty)
     {
-        /* $purchase->delete();
-        return redirect()->route('purchases.index'); */
+        $warranty->delete();
+        return redirect()->route('warranties.index');
     }
 
     public function pdf(Warranty $warranty)

@@ -53,6 +53,7 @@
                                 <tr>
                                     {{-- <th>Id</th> --}}
                                     <th>Ticket</th>
+                                    <th>Fecha de creación</th>
                                     <th>Categoría</th>
                                     <th>Tipo</th>
                                     <th>Placa</th>
@@ -66,10 +67,11 @@
                             <tbody>
                                 @foreach ($warranties as $warranty)
                                 <tr>
-                                    <th scope="row">{{ $warranty->id }}</th>
+                                    {{-- <th scope="row">{{ $warranty->id }}</th> --}}
                                     <td>
                                         <a href="{{ route('warranties.show', $warranty) }}">{{ $warranty->ticket }}</a>
                                     </td>
+                                    <td>{{ $warranty->warranty_date }}</td>
                                     <td>{{ $warranty->category->name }}</td>
                                     <td>{{ $warranty->type->name }}</td>
                                     <td>{{ $warranty->plate }}</td>

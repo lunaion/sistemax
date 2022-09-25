@@ -16,12 +16,13 @@ class DatabaseSeeder extends Seeder
         $this->call(BusinessTableSeeder::class);
         $this->call(PrinterTableSeeder::class);
         $this->call(CityTableSeeder::class);
+        $this->call(SedeTableSeeder::class);
         $this->call(CategoryTableSeeder::class);
         $this->call(MarkTableSeeder::class);
         $this->call(ModeloTableSeeder::class);
         $this->call(PartTableSeeder::class);
         $this->call(ProviderTableSeeder::class);
-        $this->call(SedeTableSeeder::class);
         $this->call(OperationTableSeeder::class);
+        $this->call(TypeTableSeeder::class);
     }
 }

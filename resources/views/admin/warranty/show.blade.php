@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Detalles del sede')
+@section('title','Detalles de garantías')
 @section('styles')
 
 @endsection
@@ -16,13 +16,13 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            {{$sede->name}}
+            Garantía
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li> 
-                <li class="breadcrumb-item"><a href="{{route('sedes.index')}}">Sedes</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{$sede->name}}</li>
+                <li class="breadcrumb-item"><a href="{{route('warranties.index')}}">Garantías</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{$warranty->ticket}}</li>
             </ol>
         </nav>
     </div>
@@ -34,51 +34,52 @@
                         <div class="col-lg-4">
                             <div class="border-bottom text-center pb-4">
 
-                                <img src="{{ asset('image/sede/'.$sede->image) }}" alt="profile" class="img-lg mb-3">
+                                {{-- <img src="{{ asset('image/sede/'.$sede->image) }}" alt="profile" class="img-lg mb-3"> --}}
 
-                                <h3>{{$sede->name}}</h3>
+                                <h3>{{$warranty->ticket}}</h3>
                                 <div class="d-flex justify-content-between">
                                 </div>
                             </div>
-                            {{-- <div class="border-bottom py-4">
-                                <div class="list-group">
-                                    <button type="button" class="list-group-item list-group-item-action active">
-                                        Sobre proveedor
-                                    </button>
-                                    <button type="button" class="list-group-item list-group-item-action">
-                                        Productos
-                                    </button>
-                                    <button type="button" class="list-group-item list-group-item-action">
-                                        Registrar producto
-                                    </button>
-                                </div>
-                            </div> --}}
-
                             <div class="py-4">
                                 <p class="clearfix">
                                     <span class="float-left">
                                         Estado
                                     </span>
                                     <span class="float-right text-muted">
-                                        {{ $sede->status }}
+                                        {{ $warranty->status }}
                                     </span>
                                 </p>
                                 <p class="clearfix">
                                     <span class="float-left">
-                                        Ciudad
+                                        Ticket
                                     </span>
                                     <span class="float-right text-muted">
-                                        {{-- Detalles del proveedor --}}
-                                        <a href="{{route('cities.show',$sede->city->id)}}">{{ $sede->city->name }}</a>
+                                        {{ $warranty->ticket }}
+                                    </span>
+                                </p>
+                                <p class="clearfix">
+                                    <span class="float-left">
+                                        Fecha de creación
+                                    </span>
+                                    <span class="float-right text-muted">
+                                        {{ $warranty->warranty_date }}
+                                    </span>
+                                </p>
+                                <p class="clearfix">
+                                    <span class="float-left">
+                                        Creado por
+                                    </span>
+                                    <span class="float-right text-muted">
+                                        {{ $warranty->user->name }}
                                     </span>
                                 </p>
 
                             </div>
                             {{-- <button class="btn btn-primary btn-block">{{ $product->status }}</button> --}}
-                            @if ($sede->status == 'ACTIVE')
-                            <button class="btn btn-success btn-block">{{ $sede->status }}</button>
+                            @if ($warranty->status == 'VALID')
+                            <button class="btn btn-success btn-block">{{ $warranty->status }}</button>
                             @else
-                            <button class="btn btn-danger btn-block">{{ $sede->status }}</button>
+                            <button class="btn btn-danger btn-block">{{ $warranty->status }}</button>
                             @endif
                         </div>
 
@@ -87,7 +88,7 @@
                         <div class="col-lg-8 pl-lg-5">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h4>Detalles del producto</h4>
+                                    <h4>Detalles de la garantía</h4>
                                 </div>
                             </div>
                             <div class="profile-feed">
@@ -96,24 +97,24 @@
                                    
                                     
                                     <div class="form-group col-md-6">
-                                        <strong><i class="fab fa-product-hunt mr-1"></i> Dirección</strong>
+                                        <strong><i class="fab fa-product-hunt mr-1"></i> Fecha de creación</strong>
                                         <p class="text-muted">
-                                            {{$sede->address}}
+                                            {{$warranty->warranty_date}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-address-card mr-1"></i> Contacto</strong>
+                                        <strong><i class="fas fa-address-card mr-1"></i> Categoría</strong>
                                         <p class="text-muted">
-                                            {{$sede->user->name}}
+                                            {{$warranty->category->name}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fas fa-address-card mr-1"></i> Teléfono</strong>
+                                        <strong><i class="fas fa-address-card mr-1"></i> Tipo</strong>
                                         <p class="text-muted">
-                                            {{$sede->phone}}
+                                            {{$warranty->type->name}}
                                         </p>
                                         <hr>
-                                        <strong><i class="fab fa-product-hunt mr-1"></i> Correo electrónico</strong>
+                                        <strong><i class="fab fa-product-hunt mr-1"></i> Placa</strong>
                                         <p class="text-muted">
-                                            {{$sede->email}}
+                                            {{$warranty->plate}}
                                         </p>
                                         <hr>
                                     </div>
@@ -123,7 +124,7 @@
                     </div>
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="{{route('sedes.index')}}" class="btn btn-primary float-right">Regresar</a>
+                    <a href="{{route('warranties.index')}}" class="btn btn-primary float-right">Regresar</a>
                 </div>
             </div>
         </div>

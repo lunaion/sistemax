@@ -7,7 +7,7 @@
                 </div>
                 <div class="profile-name">
                     <p class="name">
-                        Bienvenido Javier
+                        Bienvenido
                     </p>
                     <p class="designation">
                         Super Admin

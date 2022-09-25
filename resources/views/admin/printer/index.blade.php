@@ -1,32 +1,21 @@
 @extends('layouts.admin')
-@section('title','Gestión de impresora')
+@section('title','Configuración de impresora')
 @section('styles')
-
-<style type="text/css">
-    .unstyled-button {
-        border: none;
-        padding: 0;
-        background: none;
-    }
-
-</style>
-
 @endsection
 @section('options')
 @endsection
 @section('preference')
 @endsection
 @section('content')
-
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Impresora
+            Configuración de impresora
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom">
-                <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Impresora</li>
+                <li class="breadcrumb-item"><a href="{{route('home')}}">Panel administrador</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Configuración de impresora</li>
             </ol>
         </nav>
     </div>
@@ -34,65 +23,60 @@
         <div class="col-lg-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <div class="form-group">
+                        <strong><i class="fas fa-file-signature mr-1"></i> Nombre </strong>
 
-                    <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Impresora</h4>
-                        <div class="btn-group">
-                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis"></i>
-                            </a>
-                            {{-- <div class="dropdown-menu dropdown-menu-right"> --}}
-                            <a href="{{route('clients.create')}}" type="button" class="btn btn-info ">
-                                <i class="fas fa-plus"></i> Nuevo
-                            </a>
-                        </div>
+                        <p class="text-muted">
+                            {{$printer->name}}
+                        </p>
+                        <hr>
                     </div>
-                    <div class="table-responsive">
-                        <table id="order-listing" class="table">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Cédula</th>
-                                    <th>Teléfono/Celular</th>
-                                    <th>Correo electrónico</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            {{-- <tbody>
-                                @foreach ($clients as $client)
-                                <tr>
-                                    <th scope="row">{{ $client->id }}</th>
-                                    <td>
-                                        <a href="{{ route('clients.show', $client) }}">{{ $client->name }}</a>
-                                    </td>
-                                    <td>{{ $client->dni }}</td>
-                                    <td>{{ $client->phone }}</td>
-                                    <td>{{ $client->email}}</td>
-                                    <td style="width: 50px;">
-                                        {!! Form::open(['route'=>['clients.destroy',$client], 'method'=>'DELETE']) !!}
-
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('clients.edit', $client) }}" title="Editar">
-                                            <i class="far fa-edit"></i>
-                                        </a>
-
-                                        <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-
-                                        {!! Form::close() !!}
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody> --}}
-                        </table>
-                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal"
+                        data-target="#exampleModal-2">Actualizar</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<div class="modal fade" id="exampleModal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel-2"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel-2">Actualizar datos de empresa</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+
+            {!! Form::model($printer,['route'=>['printers.update',$printer], 'method'=>'PUT','files' => true]) !!}
+
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" name="name" id="name" value="{{$printer->name}}"
+                        aria-describedby="helpId">
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Actualizar</button>
+                <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+            </div>
+
+        {!! Form::close() !!}
+
+        </div>
+    </div>
+</div>
+
 @endsection
 @section('scripts')
-{!! Html::script('melody/js/data-table.js') !!}
+
 @endsection

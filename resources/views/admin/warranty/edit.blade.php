@@ -1,4 +1,5 @@
-@extends('layouts.admin')
+En construcción....
+{{-- @extends('layouts.admin')
 @section('title','Editar sede')
 @section('styles')
 
@@ -103,4 +104,4 @@
 @endsection
 @section('scripts')
 {!! Html::script('melody/js/dropify.js') !!}
-@endsection
+@endsection --}}

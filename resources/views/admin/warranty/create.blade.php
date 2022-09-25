@@ -50,7 +50,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Categoría</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="category_id" id="category_id">
+                                  <select class="form-control" name="category_id" id="category_id" required>
+                                    <option value="" disabled selected>Selecccione una categoría</option>
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
@@ -64,7 +65,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Tipo</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="type_id" id="type_id">
+                                  <select class="form-control" name="type_id" id="type_id" required>
+                                    <option value="" disabled selected>Selecccione un tipo</option>
                                     @foreach ($types as $type)
                                     <option value="{{ $type->id }}">{{ $type->name }}</option>
                                     @endforeach
@@ -95,7 +97,8 @@
                                 <label class="col-sm-3 col-form-label">Marca</label>
                                 <div class="col-sm-9">
                                   <div class="form-check">
-                                    <select class="form-control" name="mark_id" id="mark_id">
+                                    <select class="form-control" name="mark_id" id="mark_id" required>
+                                      <option value="" disabled selected>Selecccione una marca</option>
                                       @foreach ($marks as $mark)
                                       <option value="{{ $mark->id }}">{{ $mark->name }}</option>
                                       @endforeach
@@ -110,7 +113,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Modelo</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="modelo_id" id="modelo_id">
+                                  <select class="form-control" name="modelo_id" id="modelo_id" required>
+                                    <option value="" disabled selected>Selecccione un modelo</option>
                                     @foreach ($modelos as $modelo)
                                     <option value="{{ $modelo->id }}">{{ $modelo->name }}</option>
                                     @endforeach
@@ -122,7 +126,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Parte</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="part_id" id="part_id">
+                                  <select class="form-control" name="part_id" id="part_id" required>
+                                    <option value="" disabled selected>Selecccione una parte</option>
                                     @foreach ($parts as $part)
                                     <option value="{{ $part->id }}">{{ $part->name }}</option>
                                     @endforeach
@@ -136,7 +141,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Ciudad</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="city_id" id="city_id">
+                                  <select class="form-control" name="city_id" id="city_id" required>
+                                    <option value="" disabled selected>Selecccione una ciudad</option>
                                     @foreach ($cities as $city)
                                     <option value="{{ $city->id }}">{{ $city->name }}</option>
                                     @endforeach
@@ -148,7 +154,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Sede</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="sede_id" id="sede_id">
+                                  <select class="form-control" name="sede_id" id="sede_id" required>
+                                    <option value="" disabled selected>Selecccione una sede</option>
                                     @foreach ($sedes as $sede)
                                     <option value="{{ $sede->id }}">{{ $sede->name }}</option>
                                     @endforeach
@@ -162,7 +169,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Operación</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="operation_id" id="operation_id">
+                                  <select class="form-control" name="operation_id" id="operation_id" required>
+                                    <option value="" disabled selected>Selecccione una operación</option>
                                     @foreach ($operations as $operation)
                                     <option value="{{ $operation->id }}">{{ $operation->name }}</option>
                                     @endforeach
@@ -174,7 +182,8 @@
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Proveedor</label>
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="provider_id" id="provider_id">
+                                  <select class="form-control" name="provider_id" id="provider_id" required>
+                                    <option value="" disabled selected>Selecccione un proveedor</option>
                                     @foreach ($providers as $provider)
                                     <option value="{{ $provider->id }}">{{ $provider->name }}</option>
                                     @endforeach
@@ -185,8 +194,8 @@
                           </div>
 
                           <div class="form-group">
-                            <label for="description">Observaciones</label>
-                            <textarea class="form-control" name="description" id="comments" rows="3"></textarea>
+                            <label for="comments">Observaciones</label>
+                            <textarea class="form-control" name="comments" id="comments" rows="3"></textarea>
                           </div>
 
                           <button type="submit" class="btn btn-primary mr-2">Registrar</button>
