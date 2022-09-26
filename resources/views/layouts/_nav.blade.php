@@ -40,14 +40,6 @@
                         <a class="nav-link" href="{{route('cities.index')}}">Ciudades</a>
                     </li>
                     
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" href="{{route('business.index')}}">Empresa</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('printers.index')}}">Impresora</a>
-                    </li> 
-                    
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('marks.index')}}">Marcas</a>
                     </li>

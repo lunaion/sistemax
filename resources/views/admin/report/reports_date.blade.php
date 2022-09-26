@@ -37,6 +37,7 @@
 
                     {!! Form::open(['route'=>'report.results', 'method'=>'POST']) !!}
                     <div class="row ">
+
                         <div class="col-12 col-md-3">
                             <span>Fecha inicial</span>
                             <div class="form-group">
@@ -58,6 +59,7 @@
                                <button type="submit" class="btn btn-primary btn-sm">Consultar</button>
                             </div>
                         </div>
+                        
                     </div>
                     {!! Form::close() !!}
 

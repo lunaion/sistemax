@@ -23,9 +23,9 @@ class ReportController extends Controller
         return view('admin.report.reports_date', compact('warranties'));
     }
     public function report_results(Request $request){
-        $fechaInicio = $request->fecha_ini.'00:00:00';
-        $fechaFinal = $request->fecha_fin.'23:59:59';
-        $warranties = Warranty::whereBetween('warranty_date', [$fechaInicio, $fechaFinal])->get();
+        $fi = $request->fecha_ini.' 00:00:00';
+        $ff = $request->fecha_fin.' 23:59:59';
+        $warranties = Warranty::whereBetween('warranty_date', [$fi, $ff])->get();
 
         /* return redirect()->route('reports.date', compact('warranties')); */
         return view('admin.report.reports_date', compact('warranties'));
