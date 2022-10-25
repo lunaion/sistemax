@@ -77,7 +77,7 @@
                                     <th>Modelo</th>
                                     <th>Sede</th>
                                     <th>Estado</th>
-                                    <th>Acciones</th>
+                                    <th>Creado por</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -94,20 +94,22 @@
                                     <td>{{ $warranty->serial }}</td>
                                     <td>{{ $warranty->modelo->name }}</td>
                                     <td>{{ $warranty->sede->name }}</td>
-                                    <td>{{ $warranty->status}}</td>
-                                    <td style="width: 50px;">
-                                        {!! Form::open(['route'=>['warranties.destroy',$warranty], 'method'=>'DELETE']) !!}
-
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{ route('warranties.edit', $warranty) }}" title="Editar">
-                                            <i class="far fa-edit"></i>
+                                    
+                                    @if ($warranty->status == 'VALID')
+                                    <td>
+                                        <a class="jsgrid-button btn btn-success" href="{{ route('change.status.warranties', $warranty) }}" title="Editar">
+                                            Valida <i class="fas fa-check"></i>
                                         </a>
-
-                                        <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-
-                                        {!! Form::close() !!}
                                     </td>
+                                    @else
+                                    <td>
+                                        <a class="jsgrid-button btn btn-danger" href="{{ route('change.status.warranties', $warranty) }}" title="Editar">
+                                            Cancelada <i class="fas fa-times"></i>
+                                        </a>
+                                    </td>
+                                    @endif
+
+                                    <td>{{ $warranty->user->name}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

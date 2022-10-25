@@ -20,7 +20,7 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Buenvenido, te encuentras en la página principal.
+            Bienvenido, te encuentras en la página principal.
         </h3>
     </div>
     <div class="row">

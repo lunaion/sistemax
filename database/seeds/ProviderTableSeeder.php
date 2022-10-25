@@ -13,11 +13,19 @@ class ProviderTableSeeder extends Seeder
     public function run()
     {
         Provider::create([
-            'name'=>'Genérico',
-            'email'=>'generico@generico.com',
+            'name'=>'Konecta',
+            'email'=>'konecta@konecta.com',
             'nit_number'=>'12345678',
-            'address'=>'Calle generico # 1 - 2',
+            'address'=>'Calle konecta # 1 - 2',
             'phone'=>'1234567',
+        ]);
+
+        Provider::create([
+            'name'=>'Alquilados',
+            'email'=>'alquilados@alquilados.com',
+            'nit_number'=>'123456789',
+            'address'=>'Calle alquilados # 1 - 2',
+            'phone'=>'12345678',
         ]);
     }
 }

@@ -24,7 +24,7 @@ class WarrantyController extends Controller
         $this->middleware('can:warranties.create')->only(['create','store']);
         $this->middleware('can:warranties.index')->only(['index']);
         $this->middleware('can:warranties.show')->only(['show']);
-        $this->middleware('can:change.status.purchases')->only(['change_status']);
+        $this->middleware('can:change.status.warranties')->only(['change_status']);
         $this->middleware('can:warranties.pdf')->only(['pdf']);
         $this->middleware('can:upload.warranties')->only(['upload']);
     }
@@ -88,8 +88,8 @@ class WarrantyController extends Controller
 
     public function destroy(Warranty $warranty)
     {
-        $warranty->delete();
-        return redirect()->route('warranties.index');
+       /*  $warranty->delete();
+        return redirect()->route('warranties.index'); */
     }
 
     public function pdf(Warranty $warranty)

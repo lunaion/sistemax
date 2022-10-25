@@ -100,9 +100,9 @@
                                             <i class="far fa-edit"></i>
                                         </a>
 
-                                        <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
+                                        {{-- <button class="jsgrid-button jsgrid-delete-button unstyled-button" type="submit" title="Eliminar">
                                             <i class="far fa-trash-alt"></i>
-                                        </button>
+                                        </button> --}}
 
                                         {!! Form::close() !!}
                                     </td>
